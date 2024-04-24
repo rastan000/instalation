@@ -1,0 +1,101 @@
+
+
+
+Résumer :
+
+téléchargement de :	*- " httpd-2.4.59.tar.bz2 " depuis internet
+			- "apr-util-1.6.3.tar.bz2 " dépendance de " httpd-2.4.59 "
+			- "apr-1.7.4.tar.gz " dépendance de " httpd-2.4.59 "
+			- " expat-2.6.2.tar.bz2 " dépendance de " httpd-2.4.59 "			
+
+			*- " php-8.1.28.tar.bz2 " depuis internet
+			- " pcre-8.00.tar.bz2 "dépendance de php
+			- " xml2 " depuis "apt install libxm2-dev"
+			- " sqlite3 " depuis " apt install libsqlite3-dev 
+			
+			*- " mysql-8.0.36.tar.gz " depuis internet
+			- " boost_1_77_0.tar.bz2 " depuis internet 
+			- " ncurses-6.4.tar.gz " depuis internet
+ 			- " ssl " depuis  " sudo apt install libssl-dev "
+
+
+	DÉMARCHE	: 
+*Installation de php :
+	Étape 1 :
+	- decompressser  " pcre-8.00.tar.bz2 "
+		cmd : < tar -jxvf  pcre-8.00.tar.bz2 >
+	-  accéder au dossier d’installation de " pcre "
+	- exécution de " ./configure " 
+	- exécution de " make "
+	- exécution de "sudo make install "
+	pcre a bien été installer
+	Étape 2 :
+	-Décompresser " php-8.1.28.tar.bz2 "
+		cmd : < tar -jxvf php-8.1.28.tar.bz2 >
+	- accéder au dossier d’installation de php
+	- exécution de " ./configure "
+	- exécution de la commande " make "
+	-  exécution de la commande " make test "
+	-  exécution de la commande "sudo make install "
+	
+	php a bien été installer avec succès !
+
+*Installation de httpd :
+    1. Étape 1 :
+	- décompresser  " apr-util-1.6.3.tar.bz2 "
+		cmd : < tar -jxvf  apr-util-1.6.3.tar.bz2 >
+	- Accéder au fichier de "apr-util-1.6.3 "
+	- exécution de la commande " ./configure "
+	- exécution de la commande " make "
+	- exécution de la commande "sudo make install "
+	
+	Étape 2:
+	-décompresser " apr-1.7.4.tar.gz "
+		cmd : < tar -zxvf  apr-1.7.4.tar.gz >
+	- Accéder au fichier de " apr-1.7.4 "
+	- exécution de la commande " ./configure "
+	- exécution de la commande " make "
+	- exécution de la commande "sudo make install "
+	apr-1.7.4 a bien été installer
+	
+	Étape 3 :
+	- décompresser " expat-2.6.2.tar.bz2 "
+		cmd : < tar -jxvf expat-2.6.2.tar.bz2 >
+	-  Accéder au fichier de " expat-2.6.2 "
+	- exécution de la commande " ./configure "
+	- exécution de la commande " make "
+	- exécution de la commande "sudo make install "
+	expact-2.6.7 a bien été installer
+
+	Etape 4 :
+	- Décompresser  " httpd-2.4.59.tar.bz2 "
+		cmd : < tar -jxvf  httpd-2.4.59.tar.bz2 >
+	- Accéder au fichier de " httpd-2.4.59 "
+	- exécution de la commande " ./configure --with-include-apr"
+	- exécution de la commande " make "
+	- exécution de la commande "sudo make install "
+	" httpd-2.4.59 " a bien été installer
+
+
+	*instalation de mysql :
+	Etape 1 :
+	- Décompresser " boost_1_77_0.tar.bz2 "
+		cmd : < tar -jxvf  boost_1_77_0.tar.bz2 >
+	- Accéder au fichier de " boost_1_77_0"
+	- exécution de la commande " ./bootstrap.sh"
+	- exécution de la commande " ./b2"
+	- exécution de la commande " sudo ./b2 install "
+	" boost_1_77_0 " a bien été installer
+
+	Etape 2 :
+	- Décompresser " mysql-8.0.36.tar.gz "
+		cmd : < tar -jxvf  mysql-8.0.36.tar.gz >
+	- Accéder au fichier de " mysql-8.0.36"
+	- créer un dossier du nom de "build"
+		cmd : < mkdir built >
+	- accéder au répertoire build
+	- exécution de la commande " cmake .."
+	- exécution de la commande " make "
+	- exécution de la commande "sudo make install "
+	" httpd-2.4.59 " a bien été installer
+	
